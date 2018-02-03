@@ -9,11 +9,17 @@
 <body>
 
 <h2>GCoins Miner</h2>
+<button type="button" onClick="Save()">Save Game</button>
+<button type="button" onClick="Load()">Load Game</button>
+<br/>
 
 <button type="button" onClick="Mine(0.000000000001)">Mine by hand</button>
 Coins: <span id="Coins">0</span><br />
+
 <button style="visibility:hidden;" type="button" id="BuyBComp" onClick="Purchase('BC')">Buy a bad computer</button>
 Bad Computers: <span id="BComputers">0</span><br />
+
+
 <!--should load last -->
 <script type="text/javascript" src="main.js"></script>
 </body>

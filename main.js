@@ -1,15 +1,28 @@
 var GCoins = 0.0;
 var BadComputers = 0;
 
+function Save(){
+    var save = {
+      GCoins: GCoins,
+      BadComputers: BadComputers
+  }
+  localStorage.setItem("save",JSON.stringify(save));
+}
+function Load(){
+  var savegame = JSON.parse(localStorage.getItem("save"));
+  if (typeof savegame.GCoins !== "undefined") GCoins = savegame.GCoins;
+  if (typeof savegame.BadComputers !== "undefined") BadComputers = savegame.BadComputers;
+}
+
+
 function Mine(ammount){
   //Adjust GCoin ammount
   GCoins += ammount;
-  document.getElementById("Coins").innerHTML = GCoins.toFixed(12);
 }
 
 function BadComputer(n){
   //Calculate how much your badComputer helps
-  Mine(n*0.000000000001)
+  Mine(n*0.00000000000001)
 }
 
 function Purchase(selection){
@@ -17,7 +30,6 @@ function Purchase(selection){
   if(selection = 'BC'){
     Mine(-0.000000000020)
     BadComputers += 1;
-    document.getElementById("BComputers").innerHTML = BadComputers;
   }
 }
 
@@ -32,4 +44,6 @@ window.setInterval(function(){
 
 	BadComputer(BadComputers);
 
+  document.getElementById("BComputers").innerHTML = BadComputers;
+  document.getElementById("Coins").innerHTML = GCoins.toFixed(12);
 }, 100);
