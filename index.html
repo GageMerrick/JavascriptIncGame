@@ -22,32 +22,48 @@
     <table>
       <tr>
         <th align='right'><button type="button" onClick="Mine(0.000000000001)">Mine by hand (0.000000000001)</button></th>
-        <th align='left'>Coins: <span id="Coins">0</span><br /></th>
+        <th align='left'>Coins: <span id="Coins">0</span></th>
       </tr>
 
       <tr>
         <th align='right'><button type="button" id="BuyBComp" onClick="Purchase('BC')" disabled>Buy a bad computer (-0.000000000020)</button></th>
-        <th align='left'>Bad Computers: <span id="BComputers">0</span><br /></th>
+        <th align='left'>Bad Computers: <span id="BComputers">0</span></th>
       </tr>
 
       <tr>
         <th align='right'><button type="button" id="BuyAComp" onClick="Purchase('AC')" disabled>Buy an average computer (-0.000000000150)</button></th>
-        <th align='left'>Average Computers: <span id="AComputers">0</span><br /></th>
+        <th align='left'>Average Computers: <span id="AComputers">0</span></th>
       </tr>
 
       <tr>
-        <th align='right'><button type="button" id="BuyDComp" onClick="Purchase('DC')" disabled>Buy a decent computer (-0.000000000500)</button></th>
-        <th align='left'>Decent Computers: <span id="ADomputers">0</span><br /></th>
+        <th><button type="button" id="BuyDComp" onClick="Purchase('DC')" disabled>Buy a decent computer (-0.000000000500)</button></th>
+        <th>Decent Computers: <span id="ADomputers">0</span></th>
       </tr>
 
     </table>
   </div>
 
-  <div class="center"></div>
+  <div class="center">
+    <h3>Market</h3>
+
+    <table>
+      <tr>
+        <th align='right'>Current market price: </th>
+        <th align='left'><span id="MarketPrice">$10/coin</span></th>
+      </tr>
+
+      <tr>
+        <th align='right'><button type="button">Buy!</button></th>
+        <th align='left'><button type="button">Sell!</button></th>
+      </tr>
+    </table>
+
+  </div>
   <div class="right"></div>
 
 </div>
 <!--should load last -->
 <script type="text/javascript" src="main.js"></script>
+<script type="text/javascript" src="market.js"></script>
 </body>
 </html>
