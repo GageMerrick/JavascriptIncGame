@@ -1,11 +1,12 @@
 var CurrentMarketPrice = 10;
 var PreviousMarketMovements = [];
 var MarketHistoryLength = 10;
+var CurrentWorth = 0;
 
 function CalculateMarketPrice(){
   var chance = Math.random()+CalculatePercentDown();
   var change = (Math.random()*5);
-  if(chance > 0.9){
+  if(chance > 1){
     PreviousMarketMovements.push("Up")
     CurrentMarketPrice += change;
   }else{
@@ -35,6 +36,16 @@ function CalculatePercentDown(){
     }
   }
   return count/PreviousMarketMovements.length;
+}
+
+function BuyCoins(){
+  //if()
+}
+
+function SellCoins(){
+  CurrentWorth = GCoins * CurrentMarketPrice;
+  document.getElementById("NetWorth").innerHTML = "$" + CurrentWorth;
+  GCoins = 0;
 }
 
 window.setInterval(function(){
